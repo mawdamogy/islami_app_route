@@ -11,7 +11,6 @@ class AppImages {
   static const String icontasbeeh = 'assets/images/icon_tasbeeh.png';
   static const String logo = 'assets/images/logo.png';
   static const String iconsearch = 'assets/images/icon_search.png';
-  static const String mostrecently = 'assets/images/qurrannn.png';
   static const String vectorimage = 'assets/images/vector_image.png';
   static const String detailsbg = 'assets/images/details.png';
   static const String musqueimage = 'assets/images/musque_image.png';
@@ -33,4 +32,5 @@ class AppImages {
   static const String nosoundplayImage = 'assets/images/nosoundplay_image.png';
   static const String soundplayImage = 'assets/images/soundplay_image.png';
   static const String sebhaImage = 'assets/images/Sebha.png';
+  static const String mostrecentlyImage = 'assets/images/most_recently.png';
 }
