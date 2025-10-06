@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app_route/provider/most_recently_provider.dart';
 import 'package:islami_app_route/ui/home/home_screen.dart';
 import 'package:islami_app_route/ui/home/taps/quran/details2/sura_details_screen2.dart';
+import 'package:islami_app_route/ui/onboarding/onboarding_screen.dart';
 import 'package:islami_app_route/utils/app_routes.dart';
 import 'package:islami_app_route/utils/app_theme.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (context) => MostRecentlyProvider(),
+    child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -21,8 +26,9 @@ class MyApp extends StatelessWidget {
       initialRoute: AppRoutes.homeroute,
       routes: {
         AppRoutes.homeroute: (context) => const HomeScreen(),
-        AppRoutes.souradetails2route :(context)=>const SuraDetailsScreen2(),
-        },
+        AppRoutes.souradetails2route: (context) => const SuraDetailsScreen2(),
+        AppRoutes.onboardingroute: (context) => OnboardingScreen(),
+      },
     );
   }
 }
