@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami_app_route/provider/most_recently_provider.dart';
 import 'package:islami_app_route/ui/home/taps/quran/quran_resourses.dart';
 import 'package:islami_app_route/utils/app_images.dart';
 import 'package:islami_app_route/utils/app_style.dart';
+import 'package:provider/provider.dart';
 
 class SuraDetailsScreen2 extends StatefulWidget {
   const SuraDetailsScreen2({super.key});
@@ -13,9 +15,16 @@ class SuraDetailsScreen2 extends StatefulWidget {
 
 class _SuraDetailsScreenState extends State<SuraDetailsScreen2> {
   String suracontent = '';
+  MostRecentlyProvider? mostRecentlyProvider;
+  @override
+  void dispose() {
+    mostRecentlyProvider?.getMostRecentlySuraList();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
+    mostRecentlyProvider = Provider.of<MostRecentlyProvider>(context);
     var size = MediaQuery.of(context).size;
     var index = ModalRoute.of(context)!.settings.arguments as int;
     if (suracontent.isEmpty) {

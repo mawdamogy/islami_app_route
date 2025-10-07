@@ -41,6 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
           fit: BoxFit.fill,
         ),
         Scaffold(
+          resizeToAvoidBottomInset: true,
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
